@@ -15,27 +15,28 @@
 > ⚠️ **修改三码之前请勿登陆AppleID**! 
 
 ## 功能快速预览
-✅ 完美
+✅ 可用
 ⭕️ 能用但是有问题
 ❌ 不可用
 
-| 功能/设备      | 能用 | 不可用 | 备注           |
-|----------------|:----:|:------:|----------------|
-| 板载声卡       |  ⭕️   |        | 麦克风无法使用 |
-| 6650XT         |  ✅   |        |                |
-| DP,HDMI        |  ⭕️   |        | DP音频无法输出 |
-| 有线网卡       |  ✅   |        |                |
-| 蓝牙           |  ✅   |        |                |
-| WiFi           |  ✅   |        |                |
-| 隔空投送       |  ✅   |        |                |
-| CPU变频        |  ✅   |        |                |
-| USB3.1 & TypeC |  ✅   |        |                |
+| 功能/设备      | 可用度 |      备注      |
+|----------------|:------:|:--------------:|
+| CPU变频        |   ✅    |                |
+| 显卡           |   ✅    |                |
+| DP & HDMI      |   ⭕️    | DP音频无法输出 |
+| 板载声卡       |   ⭕️    | 麦克风无法使用 |
+| 有线网卡       |   ✅    |                |
+| WiFi           |   ✅    |                |
+| 蓝牙           |   ✅    |                |
+| 隔空投送       |   ✅    |                |
+| USB3.1 & TypeC |   ✅    |                |
 
 ## BIOS 设置
 | 功能        |  选项   |
 |-------------|:-------:|
 | Fast Boot   | Enbale  |
-| CSM Support | Disable |
+| CSM 支持    | Disable |
+| Secure Boot | Disable |
 | 4G 以上解码 | Enable  |
 
 > 1. 未提及项目保持默认即可。
@@ -50,6 +51,9 @@
 ## 关于声卡
 1. 声卡这块我没有详细测试，hackintool 探测到的 `layout-id = 7` 注入之后输出正常，麦克风无法使用。但在查资料的过程中发现有使用`layout-id = 1`的，但实测下来也是只有音频输出。  
 2. 麦克风的问题可以使用蓝牙、USB声卡、IPhone等方案解决，我平时使用一副自带DAC的耳机作为替代。
+3. 前面板插入耳机后会自动屏蔽 `内置扬声器(l)` 的输出。如果前面板经常不拔耳机的建议音响接 `后喇叭输出(i)`
+![接口设定](./Other/AudioDoc.png)
+![接口设定](./Other/AudioPlug.png)
 
 ## 关于有线网卡
 1. I211 在 12.6 上已经无法继续使用 `SmallTreeIntel82576.kext` 驱动，改用 [AppleIGB.kext](https://github.com/donatengit/AppleIGB/releases)
@@ -62,6 +66,6 @@
 4. Seagate NTFS Paragon 文件随机损坏.png 
 
 ## 常用资源链接
-[中文教程](https://hackintool.netlify.app/index.html#start)    
-[中文教程](https://apple.sqlsec.com/1-基础知识/1-1.html) - [英文对照](https://dortania.github.io/OpenCore-Post-Install/#how-to-follow-this-guide)  
+[中文教程1](https://hackintool.netlify.app/index.html#start)    
+[中文教程2](https://apple.sqlsec.com/1-基础知识/1-1.html) - [英文对照](https://dortania.github.io/OpenCore-Post-Install/#how-to-follow-this-guide)  
 [资源&论坛](https://www.mfpud.com/macos/dmg/)
